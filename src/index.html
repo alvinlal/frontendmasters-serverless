@@ -55,3 +55,23 @@
 </style>
 
 <h1>Movies, Floofed</h1>
+
+<template id="movie-template">
+  <div class="movie">
+    <img src="" />
+    <h2></h2>
+    <p class="tagline"></p>
+    <h3>Viewer Ratings</h3>
+    <ul class="scores"></ul>
+  </div>
+</template>
+
+<script>
+  async function initialize() {
+    const movies = await fetch("/.netlify/functions/movies").then((res) =>
+      res.json()
+    );
+    console.log(movies);
+  }
+  initialize();
+</script>
